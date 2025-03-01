@@ -1,0 +1,1029 @@
+[2025-02-18T07:09:28.358+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-18T07:09:28.393+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_cryptocurrencies_data.insert_coin_data_postgres manual__2025-02-18T07:04:06.240463+00:00 [queued]>
+[2025-02-18T07:09:28.413+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_cryptocurrencies_data.insert_coin_data_postgres manual__2025-02-18T07:04:06.240463+00:00 [queued]>
+[2025-02-18T07:09:28.414+0000] {taskinstance.py:2866} INFO - Starting attempt 2 of 2
+[2025-02-18T07:09:28.442+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): insert_coin_data_postgres> on 2025-02-18 07:04:06.240463+00:00
+[2025-02-18T07:09:28.457+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=370) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-18T07:09:28.463+0000] {standard_task_runner.py:72} INFO - Started process 374 to run task
+[2025-02-18T07:09:28.463+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'fetch_cryptocurrencies_data', 'insert_coin_data_postgres', 'manual__2025-02-18T07:04:06.240463+00:00', '--job-id', '103', '--raw', '--subdir', 'DAGS_FOLDER/crypto_coins_dag.py', '--cfg-path', '/tmp/tmpg0eldgq5']
+[2025-02-18T07:09:28.465+0000] {standard_task_runner.py:105} INFO - Job 103: Subtask insert_coin_data_postgres
+[2025-02-18T07:09:28.365+0000] {task_command.py:467} INFO - Running <TaskInstance: fetch_cryptocurrencies_data.insert_coin_data_postgres manual__2025-02-18T07:04:06.240463+00:00 [running]> on host df376234e961
+[2025-02-18T07:09:28.550+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='olalekanrasaq1331@gmail.com' AIRFLOW_CTX_DAG_OWNER='Akinkunmi' AIRFLOW_CTX_DAG_ID='fetch_cryptocurrencies_data' AIRFLOW_CTX_TASK_ID='insert_coin_data_postgres' AIRFLOW_CTX_EXECUTION_DATE='2025-02-18T07:04:06.240463+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-18T07:04:06.240463+00:00'
+[2025-02-18T07:09:28.555+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-02-18T07:09:28.557+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-02-18T07:09:28.559+0000] {logging_mixin.py:190} INFO - Current task name:insert_coin_data_postgres state:running start_date:2025-02-18 07:09:28.394640+00:00
+[2025-02-18T07:09:28.564+0000] {logging_mixin.py:190} INFO - Dag name:fetch_cryptocurrencies_data and current dag run status:running
+[2025-02-18T07:09:28.565+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-02-18T07:09:28.630+0000] {base.py:84} INFO - Retrieving connection 'Cryptocurrencies_connection'
+[2025-02-18T07:09:28.644+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1, 'Bitcoin', 'BTC', 95387.59, -1.02, -3.07, -9.43, 1891142388625.31, 19825875.0)
+[2025-02-18T07:09:28.649+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.667+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1027, 'Ethereum', 'ETH', 2662.48, -0.88, -2.14, -18.86, 320980075178.82, 120556761.34774569)
+[2025-02-18T07:09:28.673+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.697+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (52, 'XRP', 'XRP', 2.56, -4.47, 1.4, -20.17, 147775220981.12, 57818864895.0)
+[2025-02-18T07:09:28.706+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.721+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (825, 'Tether USDt', 'USDT', 1.0, -0.01, -0.05, 0.11, 141768442259.17, 141762384601.69476)
+[2025-02-18T07:09:28.725+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.739+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1839, 'BNB', 'BNB', 645.97, -4.14, 1.22, -8.68, 92035406361.05, 142477306.57999998)
+[2025-02-18T07:09:28.743+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.755+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (5426, 'Solana', 'SOL', 165.25, -9.92, -19.62, -39.62, 80727180000.87, 488507668.25000674)
+[2025-02-18T07:09:28.759+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.770+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (3408, 'USDC', 'USDC', 1.0, -0.0, -0.03, -0.01, 56500516519.57, 56502593783.393906)
+[2025-02-18T07:09:28.773+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.789+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (74, 'Dogecoin', 'DOGE', 0.25, -5.66, -7.68, -37.25, 36751739599.74, 148093336383.70523)
+[2025-02-18T07:09:28.791+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.801+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (2010, 'Cardano', 'ADA', 0.78, -3.49, -2.07, -26.88, 27464687429.9, 35201193525.86875)
+[2025-02-18T07:09:28.804+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.815+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1958, 'TRON', 'TRX', 0.24, -2.54, -3.22, -1.73, 20476684663.61, 86093424910.81995)
+[2025-02-18T07:09:28.820+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.843+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1975, 'Chainlink', 'LINK', 18.17, -4.4, -8.0, -22.38, 11593728427.85, 638099970.4527867)
+[2025-02-18T07:09:28.852+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.885+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (512, 'Stellar', 'XLM', 0.32, -5.07, -3.54, -32.54, 9923856337.36, 30613000056.658524)
+[2025-02-18T07:09:28.894+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.907+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (5805, 'Avalanche', 'AVAX', 23.94, -4.49, -10.48, -38.72, 9902733131.91, 413706233.24298316)
+[2025-02-18T07:09:28.912+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.925+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (20947, 'Sui', 'SUI', 3.1, -5.51, -12.33, -36.37, 9565885435.06, 3089707194.508888)
+[2025-02-18T07:09:28.928+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.938+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (2, 'Litecoin', 'LTC', 121.6, -4.1, -5.96, 0.74, 9185868286.5, 75544149.5540892)
+[2025-02-18T07:09:28.940+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.949+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (11419, 'Toncoin', 'TON', 3.63, -4.31, -6.47, -30.46, 9044832833.88, 2494546482.5063024)
+[2025-02-18T07:09:28.952+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.960+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (3957, 'UNUS SED LEO', 'LEO', 9.76, 0.22, -1.11, 2.41, 9021600675.3, 924115917.9)
+[2025-02-18T07:09:28.962+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.976+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (5994, 'Shiba Inu', 'SHIB', 0.0, -5.12, -8.0, -31.41, 8889102165.82, 589253833416921.8)
+[2025-02-18T07:09:28.979+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.987+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (32196, 'Hyperliquid', 'HYPE', 25.86, -0.22, 4.21, 28.32, 8633718159.72, 333928180.0)
+[2025-02-18T07:09:28.990+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:28.998+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (4642, 'Hedera', 'HBAR', 0.2, -6.78, -17.45, -42.18, 8568296445.97, 41903956526.56971)
+[2025-02-18T07:09:29.000+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.010+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (6636, 'Polkadot', 'DOT', 4.7, -3.82, -9.55, -31.45, 7279485939.65, 1549801344.7594538)
+[2025-02-18T07:09:29.014+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.023+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (6536, 'MANTRA', 'OM', 7.24, -3.48, 21.93, 88.58, 7045038532.25, 972795303.26)
+[2025-02-18T07:09:29.026+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.037+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1831, 'Bitcoin Cash', 'BCH', 314.12, -4.38, -8.5, -31.39, 6229279269.06, 19830915.625)
+[2025-02-18T07:09:29.039+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.046+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (11092, 'Bitget Token', 'BGB', 5.05, 2.25, -21.81, -24.97, 6057045112.88, 1200000000.0)
+[2025-02-18T07:09:29.049+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.056+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (29470, 'Ethena USDe', 'USDe', 1.0, -0.02, -0.05, 0.04, 6047083687.36, 6052226457.725595)
+[2025-02-18T07:09:29.059+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.068+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (7083, 'Uniswap', 'UNI', 9.53, -2.31, -4.85, -31.79, 5725271665.35, 600518037.71)
+[2025-02-18T07:09:29.071+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.079+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (4943, 'Dai', 'DAI', 1.0, -0.01, -0.0, 0.02, 5365799224.66, 5365382702.664872)
+[2025-02-18T07:09:29.082+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.091+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (328, 'Monero', 'XMR', 234.35, 0.73, 5.59, 8.85, 4323022537.82, 18446744.07370955)
+[2025-02-18T07:09:29.094+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.104+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (24478, 'Pepe', 'PEPE', 0.0, -2.59, -9.75, -47.56, 3964258260.53, 420689899653543.56)
+[2025-02-18T07:09:29.107+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.121+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (7278, 'Aave', 'AAVE', 252.52, -2.67, -3.26, -18.19, 3806326040.82, 15073241.93825138)
+[2025-02-18T07:09:29.123+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.134+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (6535, 'NEAR Protocol', 'NEAR', 3.15, -8.25, -6.37, -40.72, 3734377372.39, 1185165436.0)
+[2025-02-18T07:09:29.138+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.149+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (21159, 'Ondo', 'ONDO', 1.18, -6.41, -16.22, -12.31, 3733931968.99, 3159107529.0)
+[2025-02-18T07:09:29.151+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.161+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (27075, 'Mantle', 'MNT', 1.05, 3.27, -1.28, -1.12, 3547019693.64, 3364694382.8368406)
+[2025-02-18T07:09:29.164+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.172+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (35336, 'OFFICIAL TRUMP', 'TRUMP', 16.38, -7.87, -1.97, -61.65, 3276182804.52, 199999606.645891)
+[2025-02-18T07:09:29.174+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.183+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (21794, 'Aptos', 'APT', 5.57, -5.58, -11.96, -40.56, 3268194067.13, 587251652.2048124)
+[2025-02-18T07:09:29.185+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.193+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (8916, 'Internet Computer', 'ICP', 6.71, -4.47, -9.33, -35.92, 3227416112.31, 480960860.21625334)
+[2025-02-18T07:09:29.196+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.207+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1321, 'Ethereum Classic', 'ETC', 19.94, -2.72, -6.41, -24.58, 3006465514.67, 150796896.24992058)
+[2025-02-18T07:09:29.209+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.217+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (22974, 'Bittensor', 'TAO', 352.4, -1.5, -18.89, -20.03, 2952933370.12, 8379414.0)
+[2025-02-18T07:09:29.220+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.227+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (3897, 'OKB', 'OKB', 49.13, -3.32, -2.17, -14.04, 2947763868.2, 60000000.0)
+[2025-02-18T07:09:29.230+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.240+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (20396, 'Kaspa', 'KAS', 0.1, -6.07, -0.74, -23.08, 2621145706.72, 25735966390.051052)
+[2025-02-18T07:09:29.242+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.250+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (28321, 'POL (prev. MATIC)', 'POL', 0.31, -5.86, -7.08, -35.46, 2612258837.34, 8563986681.748162)
+[2025-02-18T07:09:29.252+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.262+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (3077, 'VeChain', 'VET', 0.03, -4.88, -10.84, -38.13, 2568627634.78, 80985041177.0)
+[2025-02-18T07:09:29.264+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.273+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (3635, 'Cronos', 'CRO', 0.09, -0.07, -11.97, -33.65, 2302434758.53, 26571560696.0)
+[2025-02-18T07:09:29.277+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.286+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (4030, 'Algorand', 'ALGO', 0.26, -6.23, -17.09, -40.47, 2185447469.32, 8446757482.898575)
+[2025-02-18T07:09:29.289+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.297+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (5690, 'Render', 'RENDER', 4.15, -6.59, -12.82, -42.93, 2150143202.95, 517716590.05628264)
+[2025-02-18T07:09:29.300+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.307+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (26081, 'First Digital USD', 'FDUSD', 1.0, 0.05, -0.12, 0.04, 2085248545.74, 2087515488.466722)
+[2025-02-18T07:09:29.313+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.320+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (2280, 'Filecoin', 'FIL', 3.24, -4.33, -8.15, -39.87, 2052903689.92, 633634393.0)
+[2025-02-18T07:09:29.322+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.330+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (11841, 'Arbitrum', 'ARB', 0.46, -3.03, -5.58, -38.39, 2051696360.91, 4419312625.0)
+[2025-02-18T07:09:29.332+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.339+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (4269, 'GateToken', 'GT', 22.55, -2.88, 0.09, 9.89, 2000603078.45, 88726979.22797932)
+[2025-02-18T07:09:29.342+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.349+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (29210, 'Jupiter', 'JUP', 0.72, -14.01, -17.4, -38.06, 1900017723.68, 2637438888.89)
+[2025-02-18T07:09:29.350+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.358+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (11840, 'Optimism', 'OP', 1.12, -1.68, -1.93, -39.68, 1818431748.75, 1630705846.0)
+[2025-02-18T07:09:29.360+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.367+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (3794, 'Cosmos', 'ATOM', 4.61, -3.52, -7.36, -28.97, 1800797475.66, 390934204.0)
+[2025-02-18T07:09:29.368+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.376+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (3773, 'Artificial Superintelligence Alliance', 'FET', 0.73, -6.35, -10.25, -42.14, 1753338399.89, 2389639377.3587685)
+[2025-02-18T07:09:29.378+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.384+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (32684, 'Sonic (prev. FTM)', 'S', 0.59, 7.93, 26.18, -9.79, 1687384901.39, 2880000000.0)
+[2025-02-18T07:09:29.387+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.396+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (22861, 'Celestia', 'TIA', 3.03, -2.13, -14.65, -35.9, 1607554567.48, 531197259.687873)
+[2025-02-18T07:09:29.398+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.406+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (8000, 'Lido DAO', 'LDO', 1.78, -2.69, 5.89, 3.6, 1598757338.43, 896838471.87191)
+[2025-02-18T07:09:29.408+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.416+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (7326, 'DeXe', 'DEXE', 17.8, 0.8, -7.97, 5.5, 1490687784.61, 83733347.49799643)
+[2025-02-18T07:09:29.418+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.425+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (2087, 'KuCoin Token', 'KCS', 12.0, -0.95, -3.25, 10.04, 1470880266.89, 122606967.85133564)
+[2025-02-18T07:09:29.427+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.434+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (2634, 'XDC Network', 'XDC', 0.09, -3.58, -0.23, -32.7, 1406951887.09, 14932919359.85)
+[2025-02-18T07:09:29.436+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.446+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (7226, 'Injective', 'INJ', 14.06, -7.19, -8.0, -38.96, 1391236210.45, 98970935.41)
+[2025-02-18T07:09:29.448+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.456+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (30171, 'Ethena', 'ENA', 0.43, -4.13, -14.36, -50.63, 1355241250.66, 3128125000.0)
+[2025-02-18T07:09:29.458+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.465+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (4847, 'Stacks', 'STX', 0.88, -5.66, -13.14, -42.84, 1326806278.59, 1513584068.34431)
+[2025-02-18T07:09:29.467+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.475+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (10603, 'Immutable', 'IMX', 0.76, -5.58, -13.1, -41.28, 1318843509.01, 1743800322.3898141)
+[2025-02-18T07:09:29.477+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.484+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (6719, 'The Graph', 'GRT', 0.14, -4.72, -7.89, -36.39, 1295916705.77, 9548531509.165474)
+[2025-02-18T07:09:29.485+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.493+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (8526, 'Raydium', 'RAY', 4.35, -10.67, -23.27, -41.69, 1266216329.84, 290865965.95934)
+[2025-02-18T07:09:29.496+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.502+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (2416, 'Theta Network', 'THETA', 1.26, -5.06, -13.39, -43.02, 1263420259.58, 1000000000.0)
+[2025-02-18T07:09:29.505+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.512+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (32452, 'Movement', 'MOVE', 0.52, -4.53, -9.73, -32.87, 1243011226.28, 2400000000.0)
+[2025-02-18T07:09:29.514+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.522+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (23095, 'Bonk', 'BONK', 0.0, -10.17, -16.38, -56.66, 1197059875.8, 77283768789221.56)
+[2025-02-18T07:09:29.524+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.531+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (7950, 'Flare', 'FLR', 0.02, -4.54, -8.09, -33.05, 1194467992.69, 59045048025.88888)
+[2025-02-18T07:09:29.533+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.540+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (13502, 'Worldcoin', 'WLD', 1.15, -5.92, -13.61, -46.79, 1185509833.97, 1032522360.7589512)
+[2025-02-18T07:09:29.542+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.549+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (3155, 'Quant', 'QNT', 94.46, -2.4, 2.11, -14.94, 1140427604.59, 12072738.0)
+[2025-02-18T07:09:29.551+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.559+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (8425, 'JasmyCoin', 'JASMY', 0.02, -4.51, -14.41, -30.76, 1042409191.4, 49444999677.16958)
+[2025-02-18T07:09:29.560+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.567+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (23149, 'Sei', 'SEI', 0.22, -4.59, -9.41, -42.03, 1032304900.83, 4657499999.0)
+[2025-02-18T07:09:29.570+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.577+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1765, 'EOS', 'EOS', 0.61, -3.78, -7.69, -31.82, 943918868.92, 1547297971.9329)
+[2025-02-18T07:09:29.579+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.587+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (13855, 'Ethereum Name Service', 'ENS', 25.93, -2.4, -3.24, -22.5, 921767648.65, 35549635.87967307)
+[2025-02-18T07:09:29.589+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.596+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (6210, 'The Sandbox', 'SAND', 0.37, -5.32, -10.54, -39.02, 916303777.52, 2464357126.2233224)
+[2025-02-18T07:09:29.598+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.606+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1518, 'Maker', 'MKR', 1083.66, 6.68, 9.05, -20.43, 905602633.64, 835692.50689554)
+[2025-02-18T07:09:29.608+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.617+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (2011, 'Tezos', 'XTZ', 0.85, -4.83, -7.98, -34.7, 877759466.79, 1030645850.363315)
+[2025-02-18T07:09:29.619+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.625+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (10804, 'FLOKI', 'FLOKI', 0.0, -5.57, -10.32, -45.39, 867524747.19, 9613931882567.04)
+[2025-02-18T07:09:29.627+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.637+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (2694, 'Nexo', 'NEXO', 1.33, -0.79, -0.81, -1.98, 857664910.12, 646145839.5746847)
+[2025-02-18T07:09:29.638+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.644+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (16086, 'BitTorrent [New]', 'BTT', 0.0, -2.71, -5.47, -24.74, 836710154.05, 986061142857000.0)
+[2025-02-18T07:09:29.647+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.656+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (7080, 'Gala', 'GALA', 0.02, -5.04, -13.17, -42.44, 787606201.03, 36954560310.99874)
+[2025-02-18T07:09:29.658+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.666+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1720, 'IOTA', 'IOTA', 0.22, -5.73, -13.4, -40.76, 786476675.36, 3631397410.0)
+[2025-02-18T07:09:29.669+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.678+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (4558, 'Flow', 'FLOW', 0.5, -3.19, -6.36, -31.84, 782162025.38, 1563712953.4840126)
+[2025-02-18T07:09:29.681+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.691+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (28541, 'Jito', 'JTO', 2.64, -13.04, -0.62, -20.38, 779556488.08, 295381505.8)
+[2025-02-18T07:09:29.694+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.705+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (14101, 'Ronin', 'RON', 1.22, -6.39, 1.93, -30.15, 756632760.07, 619389698.9641546)
+[2025-02-18T07:09:29.708+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.717+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (32880, 'Kaia', 'KAIA', 0.13, -2.34, -7.77, -45.01, 755858184.78, 5947629019.024311)
+[2025-02-18T07:09:29.719+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.728+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (7186, 'PancakeSwap', 'CAKE', 2.6, -8.21, 31.22, 11.81, 754610211.63, 290470070.87844753)
+[2025-02-18T07:09:29.731+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.743+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (3602, 'Bitcoin SV', 'BSV', 37.86, -5.3, -7.77, -30.93, 750662123.95, 19826650.0)
+[2025-02-18T07:09:29.746+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.755+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1376, 'Neo', 'NEO', 10.42, -4.12, -9.8, -32.18, 734781877.86, 70538831.0)
+[2025-02-18T07:09:29.758+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.767+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (28177, 'Pyth Network', 'PYTH', 0.2, -6.5, -6.81, -43.33, 719050861.06, 3624987991.43241)
+[2025-02-18T07:09:29.769+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.777+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (5176, 'Tether Gold', 'XAUt', 2910.2, 0.48, -0.1, 8.06, 717434969.81, 246524.0)
+[2025-02-18T07:09:29.780+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.789+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (29420, 'Virtuals Protocol', 'VIRTUAL', 1.1, -8.97, -17.79, -61.41, 713529505.77, 648073663.0503865)
+[2025-02-18T07:09:29.792+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.807+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (4195, 'FTX Token', 'FTT', 2.14, -3.35, 6.5, -9.91, 704481995.63, 328895103.813207)
+[2025-02-18T07:09:29.810+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.819+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (18679, 'Onyxcoin', 'XCN', 0.02, -6.98, -11.02, 100.09, 673437827.77, 32592684478.0)
+[2025-02-18T07:09:29.821+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.831+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (35347, 'Official Melania Meme', 'MELANIA', 1.25, -1.87, -16.52, -83.0, 669559722.93, 537313538.409127)
+[2025-02-18T07:09:29.833+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.841+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (6783, 'Axie Infinity', 'AXS', 4.17, -4.57, -7.9, -32.41, 661796921.77, 158717886.035092)
+[2025-02-18T07:09:29.844+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.854+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (27772, 'PayPal USD', 'PYUSD', 1.0, 0.01, 0.04, 0.09, 646374598.68, 646370555.194036)
+[2025-02-18T07:09:29.857+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.866+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (6538, 'Curve DAO Token', 'CRV', 0.49, -5.8, -18.29, -45.57, 628923361.39, 1284636283.0)
+[2025-02-18T07:09:29.868+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.877+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (24647, 'Berachain', 'BERA', 5.83, 0.55, 0.02, 482.56, 626140837.16, 107480000.0)
+[2025-02-18T07:09:29.880+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.888+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (5665, 'Helium', 'HNT', 3.45, -7.46, -15.93, -34.26, 611949800.89, 177394590.46004692)
+[2025-02-18T07:09:29.890+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.899+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (28752, 'dogwifhat', 'WIF', 0.61, -8.78, -11.85, -65.55, 609094927.75, 998841343.297069)
+[2025-02-18T07:09:29.901+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.911+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1966, 'Decentraland', 'MANA', 0.31, -5.44, -10.42, -38.57, 608853713.03, 1942255184.1130493)
+[2025-02-18T07:09:29.914+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.921+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (28081, 'SPX6900', 'SPX', 0.65, -5.28, -16.41, -52.94, 608263481.78, 930993090.07)
+[2025-02-18T07:09:29.924+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.955+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (29270, 'Aerodrome Finance', 'AERO', 0.78, -4.13, -7.99, -35.72, 603722443.56, 770589652.7298648)
+[2025-02-18T07:09:29.959+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:29.991+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (4705, 'PAX Gold', 'PAXG', 2926.34, 0.42, -0.43, 8.74, 602576516.74, 205914.878)
+[2025-02-18T07:09:29.994+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.003+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (6892, 'MultiversX', 'EGLD', 21.51, -4.36, -9.41, -38.26, 599895092.29, 27889761.79275668)
+[2025-02-18T07:09:30.006+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.016+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (3890, 'Polygon', 'MATIC', 0.31, -5.9, -6.85, -35.34, 584405757.66, 1913783718.0)
+[2025-02-18T07:09:30.021+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.032+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (5632, 'Arweave', 'AR', 8.83, -4.93, -7.81, -46.06, 579919186.35, 65652466.0)
+[2025-02-18T07:09:30.035+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.051+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (22691, 'Starknet', 'STRK', 0.22, -4.97, -14.19, -47.39, 568008703.18, 2582076157.577993)
+[2025-02-18T07:09:30.053+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.061+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (7334, 'Conflux', 'CFX', 0.12, -2.47, -2.16, -29.6, 568017029.98, 4923738731.5)
+[2025-02-18T07:09:30.063+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.073+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1437, 'Zcash', 'ZEC', 34.42, -1.71, 0.98, -30.99, 561989243.24, 16328268.75)
+[2025-02-18T07:09:30.076+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.084+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (34466, 'Pudgy Penguins', 'PENGU', 0.01, -9.5, -20.76, -68.22, 547310391.07, 62860396090.04)
+[2025-02-18T07:09:30.088+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.098+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (28324, 'dYdX', 'DYDX', 0.74, -5.48, -7.21, -43.02, 541066363.3, 732906722.1219723)
+[2025-02-18T07:09:30.101+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.112+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (4066, 'Chiliz', 'CHZ', 0.06, -5.12, -8.56, -30.74, 535072370.09, 9413900365.0)
+[2025-02-18T07:09:30.115+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.124+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (9481, 'Pendle', 'PENDLE', 3.23, -7.04, -13.13, -18.09, 530137104.66, 164356520.76163632)
+[2025-02-18T07:09:30.126+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.134+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (18876, 'ApeCoin', 'APE', 0.68, -5.78, -12.02, -37.35, 510161638.08, 752651515.0)
+[2025-02-18T07:09:30.136+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.144+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (23254, 'Core', 'CORE', 0.51, -4.63, -9.86, -44.77, 508609488.95, 995100047.2040975)
+[2025-02-18T07:09:30.147+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.155+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (10791, 'eCash', 'XEC', 0.0, -4.3, -7.34, -27.26, 501723792.5, 19826673422583.0)
+[2025-02-18T07:09:30.158+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.166+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (35626, 'Story', 'IP', 1.98, 18.31, -31.38, -31.38, 495629100.98, 250000000.0)
+[2025-02-18T07:09:30.169+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.177+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (2563, 'TrueUSD', 'TUSD', 1.0, -0.05, 0.09, -0.11, 494480922.2, 495516083.0)
+[2025-02-18T07:09:30.179+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.189+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (28298, 'Beam', 'BEAM', 0.01, -6.54, -9.76, -56.62, 492762339.74, 49466004168.0)
+[2025-02-18T07:09:30.192+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.199+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (4846, 'Kava', 'KAVA', 0.45, -2.6, -5.12, -5.21, 485860338.75, 1072916309.0)
+[2025-02-18T07:09:30.203+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.212+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (9104, 'AIOZ Network', 'AIOZ', 0.41, -3.65, -9.43, -55.73, 476012260.7, 1157698660.0646741)
+[2025-02-18T07:09:30.214+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.223+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (5692, 'Compound', 'COMP', 53.68, -3.64, -8.98, -34.99, 476102651.84, 8869887.35560698)
+[2025-02-18T07:09:30.225+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.232+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (29587, 'Wormhole', 'W', 0.16, -6.61, -11.28, -33.85, 472055948.9, 2868436163.0)
+[2025-02-18T07:09:30.234+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.247+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (6945, 'Amp', 'AMP', 0.01, -4.59, -9.54, -33.35, 452561698.07, 84231565354.4628)
+[2025-02-18T07:09:30.250+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.258+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (34104, 'Morpho', 'MORPHO', 2.01, -7.44, -8.8, -45.69, 451342465.93, 224490763.59737623)
+[2025-02-18T07:09:30.260+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.268+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (9816, 'APENFT', 'NFT', 0.0, -1.6, -2.94, -10.73, 446483134.37, 999990000000000.0)
+[2025-02-18T07:09:30.270+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.278+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (7431, 'Akash Network', 'AKT', 1.77, -5.18, -13.57, -41.31, 439430668.92, 248285794.661141)
+[2025-02-18T07:09:30.280+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.289+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1659, 'Gnosis', 'GNO', 168.29, -1.58, -6.54, -28.89, 435429394.32, 2587418.38844565)
+[2025-02-18T07:09:30.292+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.299+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (3964, 'Reserve Rights', 'RSR', 0.01, -6.79, -17.02, -47.54, 429334187.84, 55382047907.0)
+[2025-02-18T07:09:30.303+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.311+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (5964, 'Trust Wallet Token', 'TWT', 1.01, -1.95, 6.86, -13.12, 420863802.14, 416649900.0)
+[2025-02-18T07:09:30.313+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.323+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (4157, 'THORChain', 'RUNE', 1.17, -6.38, -18.29, -68.12, 411565172.92, 352064904.0)
+[2025-02-18T07:09:30.326+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.335+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (8646, 'Mina', 'MINA', 0.34, -3.67, -7.87, -40.01, 410166679.14, 1215368314.8400393)
+[2025-02-18T07:09:30.338+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.347+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (30494, 'EigenLayer', 'EIGEN', 1.72, 0.46, -4.78, -39.66, 404762863.47, 234977760.92)
+[2025-02-18T07:09:30.350+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.358+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (4172, 'Terra Classic', 'LUNC', 0.0, -6.93, -3.06, -22.83, 400603897.18, 5489060827144.599)
+[2025-02-18T07:09:30.361+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.370+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (29743, 'Brett (Based)', 'BRETT', 0.04, -7.21, -15.2, -63.47, 399350158.03, 9910236395.0)
+[2025-02-18T07:09:30.372+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.381+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (17799, 'Axelar', 'AXL', 0.44, -6.73, -8.15, -31.06, 399277218.21, 917584141.1540251)
+[2025-02-18T07:09:30.384+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.394+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (32956, 'Grass', 'GRASS', 1.6, 1.65, 5.43, -35.24, 390320724.99, 243905091.0)
+[2025-02-18T07:09:30.397+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.406+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (24091, 'ZKsync', 'ZK', 0.1, -5.95, -9.2, -39.91, 380630983.71, 3675000000.0)
+[2025-02-18T07:09:30.409+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.420+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (33391, 'DeepBook Protocol', 'DEEP', 0.13, -5.3, -35.79, -54.72, 377374965.32, 2872000000.0)
+[2025-02-18T07:09:30.423+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.432+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (8104, '1inch Network', '1INCH', 0.26, -2.99, -4.69, -28.52, 365512170.82, 1399644443.3760455)
+[2025-02-18T07:09:30.435+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.443+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (34026, 'ai16z', 'AI16Z', 0.33, -13.23, -41.95, -66.83, 358957210.77, 1099999178.3229916)
+[2025-02-18T07:09:30.445+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.454+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (23635, 'BinaryX', 'BNX', 0.96, 0.8, 37.18, 173.25, 357589180.67, 374070811.3316256)
+[2025-02-18T07:09:30.457+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.466+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1684, 'Qtum', 'QTUM', 3.27, 1.11, -7.6, 2.36, 345323729.71, 105527493.0)
+[2025-02-18T07:09:30.468+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.477+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (5488, 'JUST', 'JST', 0.03, -2.05, -3.93, -13.58, 331760383.7, 9900000000.0)
+[2025-02-18T07:09:30.480+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.489+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (5198, 'Creditcoin', 'CTC', 0.77, -2.7, -11.99, -29.45, 331917218.17, 429416053.0)
+[2025-02-18T07:09:30.492+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.500+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (8290, 'SuperVerse', 'SUPER', 0.66, -7.09, -16.26, -45.55, 331307245.58, 502860934.41691726)
+[2025-02-18T07:09:30.502+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.516+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (33597, 'Fartcoin', 'FARTCOIN', 0.33, -23.74, -50.98, -81.13, 328874954.44, 999998256.0)
+[2025-02-18T07:09:30.519+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.529+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (4041, 'MX Token', 'MX', 3.41, -1.35, -2.46, -7.68, 323971082.52, 94954334.0)
+[2025-02-18T07:09:30.532+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.540+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (2586, 'Synthetix', 'SNX', 0.95, -3.94, -10.06, -46.78, 323620279.33, 339466216.9903987)
+[2025-02-18T07:09:30.543+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.551+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (7548, 'WEMIX', 'WEMIX', 0.77, -3.7, -0.01, -6.46, 322718398.12, 417288352.1551715)
+[2025-02-18T07:09:30.553+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.565+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (3822, 'Theta Fuel', 'TFUEL', 0.05, -3.18, -14.36, -28.57, 320811524.76, 6847684973.0)
+[2025-02-18T07:09:30.568+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.577+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (8119, 'SafePal', 'SFP', 0.64, -4.95, -1.07, -8.93, 318465693.46, 500000000.0)
+[2025-02-18T07:09:30.580+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.596+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (131, 'Dash', 'DASH', 25.45, -5.17, -9.78, -34.11, 309198905.09, 12147464.21570854)
+[2025-02-18T07:09:30.598+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.606+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (5034, 'Kusama', 'KSM', 19.09, -4.91, -9.93, -37.76, 307899302.61, 16125057.21307827)
+[2025-02-18T07:09:30.608+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.623+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (27659, 'Mog Coin', 'MOG', 0.0, -2.75, -18.54, -54.72, 307515504.61, 390567526433216.7)
+[2025-02-18T07:09:30.626+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.635+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (26997, 'LayerZero', 'ZRO', 2.78, -3.57, -7.4, -37.64, 306256307.98, 110000000.0)
+[2025-02-18T07:09:30.638+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.646+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (21585, 'Safe', 'SAFE', 0.58, -4.61, -5.86, -35.71, 304806116.14, 527419089.0)
+[2025-02-18T07:09:30.648+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.660+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (23121, 'Blur', 'BLUR', 0.13, -5.54, -8.93, -38.1, 295020204.03, 2210119807.791096)
+[2025-02-18T07:09:30.662+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.672+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (4948, 'Nervos Network', 'CKB', 0.01, -1.04, -7.57, -39.12, 287380219.7, 45973650099.95927)
+[2025-02-18T07:09:30.675+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.684+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (12885, 'Astar', 'ASTR', 0.04, -6.14, -8.95, -34.96, 285867366.01, 7580039967.0)
+[2025-02-18T07:09:30.687+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.697+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (3012, 'VeThor Token', 'VTHO', 0.0, -4.75, -22.01, 28.54, 285014234.56, 86350074660.0)
+[2025-02-18T07:09:30.699+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.710+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1455, 'Golem', 'GLM', 0.29, -16.04, 6.41, -23.01, 285094040.65, 1000000000.0)
+[2025-02-18T07:09:30.714+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.726+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (7653, 'Oasis', 'ROSE', 0.04, -7.41, -14.12, -47.01, 284912723.27, 7064132681.0)
+[2025-02-18T07:09:30.729+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.737+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (28850, 'Notcoin', 'NOT', 0.0, -8.33, -7.72, -52.26, 284492141.68, 102456957077.5639)
+[2025-02-18T07:09:30.739+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.747+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (6958, 'Alchemy Pay', 'ACH', 0.03, 23.27, 7.63, 42.68, 281667987.77, 8709209268.918858)
+[2025-02-18T07:09:30.749+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.759+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (27750, 'Toshi', 'TOSHI', 0.0, -5.38, -0.51, 77.98, 281490505.19, 408069300000.0)
+[2025-02-18T07:09:30.762+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.775+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (3640, 'Livepeer', 'LPT', 7.32, -8.13, -13.35, -45.32, 279298558.44, 38171181.58065356)
+[2025-02-18T07:09:30.778+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.785+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (2469, 'Zilliqa', 'ZIL', 0.01, -3.7, -7.9, -33.99, 276184370.89, 19544918967.820404)
+[2025-02-18T07:09:30.788+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.796+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (2682, 'Holo', 'HOT', 0.0, -6.67, -12.51, -37.38, 266952010.6, 174967605792.44778)
+[2025-02-18T07:09:30.798+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.811+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1697, 'Basic Attention Token', 'BAT', 0.18, -4.34, -7.8, -27.58, 264928546.95, 1495668356.9526057)
+[2025-02-18T07:09:30.813+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.822+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1896, '0x Protocol', 'ZRX', 0.31, -10.0, -6.54, -37.2, 262200204.75, 848396562.8973439)
+[2025-02-18T07:09:30.824+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.832+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (28194, 'SATS (Ordinals)', 'SATS', 0.0, -1.23, -3.04, -4.12, 257646589.23, 2100000000000000.0)
+[2025-02-18T07:09:30.834+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.844+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (10407, 'Baby Doge Coin', 'BabyDoge', 0.0, -8.0, -6.17, -40.15, 255819170.15, 1.637122541710197e+17)
+[2025-02-18T07:09:30.846+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.853+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (21846, 'SPACE ID', 'ID', 0.29, -8.78, 0.99, -31.91, 255137579.74, 879627042.1744398)
+[2025-02-18T07:09:30.857+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.865+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (29814, 'ether.fi', 'ETHFI', 1.08, -3.59, -9.48, -42.27, 250776967.81, 231666217.0)
+[2025-02-18T07:09:30.867+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.876+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (2467, 'OriginTrail', 'TRAC', 0.49, -0.3, -2.66, -29.81, 246280141.98, 499995032.602)
+[2025-02-18T07:09:30.879+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.893+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (30126, 'cat in a dogs world', 'MEW', 0.0, -6.43, -14.16, -56.48, 246047847.98, 88888888888.0)
+[2025-02-18T07:09:30.896+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.904+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1785, 'Gas', 'GAS', 3.76, -6.99, -8.32, -24.82, 244323815.4, 64992331.0)
+[2025-02-18T07:09:30.907+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.915+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (28782, 'Popcat (SOL)', 'POPCAT', 0.25, -12.65, -17.78, -59.44, 242895492.98, 979973184.6)
+[2025-02-18T07:09:30.917+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.925+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (30063, 'Gigachad', 'GIGA', 0.03, -16.0, -34.18, -62.87, 242914988.69, 9302411888.0)
+[2025-02-18T07:09:30.928+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.938+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (25028, 'ORDI', 'ORDI', 11.5, -6.19, -7.53, -52.28, 241523018.21, 21000000.0)
+[2025-02-18T07:09:30.941+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.955+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (31526, 'Moca Network', 'MOCA', 0.13, -4.65, -16.1, -35.96, 241535650.68, 1877551362.43)
+[2025-02-18T07:09:30.958+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.966+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (5567, 'Celo', 'CELO', 0.42, -6.05, -7.61, -33.58, 235823389.13, 562409366.0)
+[2025-02-18T07:09:30.970+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.979+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (30083, 'Aethir', 'ATH', 0.04, -4.45, -11.57, -42.71, 234913451.16, 6697646536.0)
+[2025-02-18T07:09:30.981+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:30.992+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (24911, 'Turbo', 'TURBO', 0.0, -6.77, -15.65, -54.94, 233267326.88, 69000000000.0)
+[2025-02-18T07:09:30.994+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:31.006+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1042, 'Siacoin', 'SC', 0.0, -4.67, 0.62, -27.42, 231887353.72, 56025636522.075195)
+[2025-02-18T07:09:31.008+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:31.018+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (29779, 'Polyhedra Network', 'ZKJ', 2.06, -1.07, 0.0, 7.27, 231808641.88, 112502998.79)
+[2025-02-18T07:09:31.021+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:31.033+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (6758, 'SushiSwap', 'SUSHI', 0.85, -5.05, -9.16, -42.64, 225228986.61, 264034966.40750432)
+[2025-02-18T07:09:31.036+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:31.046+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (3783, 'Ankr', 'ANKR', 0.02, -4.04, -7.69, -34.51, 224743175.52, 10000000000.0)
+[2025-02-18T07:09:31.049+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:31.058+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (12220, 'Osmosis', 'OSMO', 0.31, -3.41, -2.92, -30.74, 221075998.37, 711309382.590777)
+[2025-02-18T07:09:31.060+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:31.067+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1168, 'Decred', 'DCR', 13.27, -3.85, 1.65, -6.79, 220639122.91, 16631626.64419505)
+[2025-02-18T07:09:31.070+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:31.078+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (873, 'NEM', 'XEM', 0.02, 10.51, 19.09, -2.43, 219326259.02, 8999999999.0)
+[2025-02-18T07:09:31.081+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:31.091+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (2765, 'XYO', 'XYO', 0.02, -0.47, -13.04, -5.9, 218807374.0, 13476747692.0)
+[2025-02-18T07:09:31.093+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:31.103+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (8536, 'Mask Network', 'MASK', 2.18, -1.74, -5.94, -20.27, 218361574.41, 100000000.0)
+[2025-02-18T07:09:31.105+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:31.114+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (7501, 'WOO', 'WOO', 0.12, -6.45, -7.76, -41.44, 216800511.08, 1863507196.0597656)
+[2025-02-18T07:09:31.117+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:31.126+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (23711, 'Echelon Prime', 'PRIME', 6.05, -5.7, -24.0, -56.51, 216338897.24, 35773841.0)
+[2025-02-18T07:09:31.128+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:31.136+0000] {sql.py:553} INFO - Running statement: 
+    INSERT INTO coins_data (id, name, symbol, price, percent_change_24h, percent_change_7d, percent_change_30d, market_cap, circulating_supply)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    , parameters: (1698, 'Horizen', 'ZEN', 13.57, -7.3, 6.48, -43.79, 215328059.29, 15870543.75)
+[2025-02-18T07:09:31.138+0000] {sql.py:562} INFO - Rows affected: 1
+[2025-02-18T07:09:31.142+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-02-18T07:09:31.161+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-02-18T07:09:31.162+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=fetch_cryptocurrencies_data, task_id=insert_coin_data_postgres, run_id=manual__2025-02-18T07:04:06.240463+00:00, execution_date=20250218T070406, start_date=20250218T070928, end_date=20250218T070931
+[2025-02-18T07:09:31.186+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-02-18T07:09:31.187+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-02-18T07:09:31.188+0000] {logging_mixin.py:190} INFO - Dag name:fetch_cryptocurrencies_data queued_at:2025-02-18 07:04:06.254692+00:00
+[2025-02-18T07:09:31.188+0000] {logging_mixin.py:190} INFO - Task hostname:df376234e961 operator:PythonOperator
+[2025-02-18T07:09:31.230+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-02-18T07:09:31.266+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-18T07:09:31.269+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
